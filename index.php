@@ -16,31 +16,33 @@
         <br/>
         <br/>
         <img src="img/logo.jpg" alt="" class="logo"/>
-        <div class="panel panel-default" style="width:25%; margin: auto; background-color: #EEEEEE;">
-            <div class="panel-body">
-                <div style="text-align: center; padding-bottom:10px;">
-                    <h2>Ingresa a tu cuenta</h2>
+        <form method="post" action="HerramientasClase.php">
+            <div class="panel panel-default" style="width:25%; margin: auto; background-color: #EEEEEE;">
+                <div class="panel-body">
+                    <div style="text-align: center; padding-bottom:10px;">
+                        <h2>Ingresa a tu cuenta</h2>
+                    </div>
+                    <table style="margin:auto">
+                        <tr>
+
+                            <td ><input type="text" name="Usuario" class="form-control" placeholder="Usuario"/></td>
+                        </tr>
+                        <tr>
+
+                            <td><input type="password" name="Clave" class="form-control" placeholder="Contraseña"/></td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <br/>
+                                <input name="iniciar" type="submit" class="btn btn-success" style="width:100%;" value="Iniciar Sesión"/>
+                            </td>
+                        </tr>
+
+                    </table>
+                    <br/>
                 </div>
-                <table style="margin:auto">
-                    <tr>
-                        
-                        <td ><input type="text" class="form-control" placeholder="Usuario"/></td>
-                    </tr>
-                    <tr>
-                        
-                        <td><input type="password" class="form-control" placeholder="Contraseña"/></td>
-                    </tr>
-                    <tr>
-              
-                        <td>
-                            <br/>
-                            <input name="iniciar" type="submit" class="btn btn-success" style="width:100%;" value="Iniciar Sesión"/>
-                        </td>
-                    </tr>
-        
-                </table>
-                <br/>
             </div>
-        </div>
+        </form>
     </body>
 </html>

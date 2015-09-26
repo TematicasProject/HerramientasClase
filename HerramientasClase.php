@@ -1,3 +1,31 @@
+<?php
+
+include_once 'dao/UsuariosDAO.php';
+
+if (isset($_POST["Usuario"])) {
+    $usuario = $_POST["Usuario"];
+    $clave = $_POST["Clave"];
+
+    if ($usuario == "" || $clave == "") {
+        header("location:index.php");
+        exit();
+    }
+
+    $oUsuario = new UsuariosDAO();
+    $res = $oUsuario->ValidarUsuario($usuario);
+    
+    if (mysqli_num_rows($res) == 0) {
+        header("location:index.php");
+    } else {
+        if ($res->fetch_row()["clave"] != $clave) {
+            header("location:index.php");
+        }
+    }
+} else {
+    header("location:index.php");
+}
+?>
+
 <html>
     <head>
         <title>Herramientas de Clase</title>
@@ -21,13 +49,14 @@
                 <div class="col-md-2">
                     informacion de sesion
                 </div>
+                
             </div>
             <div class="row">
                 <div class="col-md-2">
                     <div class="list-group">
-                        <a class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
-                        <a class="list-group-item" href="#"><i class="fa fa-book fa-fw"></i>&nbsp; Library</a>
-                        <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw"></i>&nbsp; Applications</a>
+                        <a class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i>&nbsp; Programas matriculados por los estudiantes</a>
+                        <a class="list-group-item" href="#"><i class="fa fa-book fa-fw"></i>&nbsp; materias asignadas para los profesores</a>
+                        <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw"></i>&nbsp; Programas dictados en las cedes</a>
                         <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a>
                     </div>
                 </div>
