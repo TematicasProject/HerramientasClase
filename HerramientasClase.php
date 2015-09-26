@@ -1,28 +1,8 @@
 <?php
-
-include_once 'dao/UsuariosDAO.php';
-
-if (isset($_POST["Usuario"])) {
-    $usuario = $_POST["Usuario"];
-    $clave = $_POST["Clave"];
-
-    if ($usuario == "" || $clave == "") {
-        header("location:index.php");
-        exit();
-    }
-
-    $oUsuario = new UsuariosDAO();
-    $res = $oUsuario->ValidarUsuario($usuario);
-    
-    if (mysqli_num_rows($res) == 0) {
-        header("location:index.php");
-    } else {
-        if ($res->fetch_row()["clave"] != $clave) {
-            header("location:index.php");
-        }
-    }
-} else {
-    header("location:index.php");
+session_start();
+if (!isset($_SESSION["Usuario"])) {
+    header('Location:index.php');
+    exit();
 }
 ?>
 
@@ -44,7 +24,20 @@ if (isset($_POST["Usuario"])) {
                     <img src="img/logo.jpg" class="logo" alt=""/>
                 </div>
                 <div class="col-md-8" >
-                    <img src="img/banner-docentes.png" alt="banner" class="img-responsive"/>
+                    <?php
+                    switch ($_SESSION["CodPerfil"]) {
+                        case "01":
+                            echo '<img src="img/banner-admon.png" alt="banner" class="img-responsive"/>';
+                            break;
+                        case "02":
+                            echo '<img src="img/banner-docentes.png" alt="banner" class="img-responsive"/>';
+                            break;
+                        case "03":
+                            echo '<img src="img/banner-estudiantes.png" alt="banner" class="img-responsive"/>';
+                            break;
+                    }
+                    ?>
+                    
                 </div>
                 <div class="col-md-2">
                     informacion de sesion

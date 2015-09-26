@@ -50,3 +50,8 @@ border-right:1px solid #dadada;
 }
 
 /***************** Fin Estilo Menu Lateral ****************/
+
+.ErrorLabel{
+    color:red;
+    font-size:12px;
+}
