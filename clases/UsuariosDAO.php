@@ -13,5 +13,10 @@ class UsuariosDAO {
         $r = mysqli_query($this->cnn->cnnDb(), "select codusuario, clave, nombre, codperfil from usuarios where codusuario = '" . $usuario . "'");
         return $r;
     }
+    
+    public function DatosMenu($usuario){
+        $r = mysqli_query($this->cnn->cnnDb(), "call spOpcionesMenu('" . $usuario . "');");
+        return $r;
+    }
 }
 ?>
