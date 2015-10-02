@@ -36,60 +36,55 @@ if(isset($_POST["iniciar"])){
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <title>pagina de inicio</title>
-        
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
-        <link href="css/general.css" rel="stylesheet" type="text/css"/>
-        
-        <script src="js/jquery-1.11.3.js" type="text/javascript"></script>
-        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/login.css" rel="stylesheet" />
+
+        <title>Login</title>
     </head>
-    <body class="body-login">
-        <br/>
-        <br/>
-        <img src="img/logo.jpg" alt="" class="logo"/>
-        <form method="post" action="index.php">
-            <div class="panel panel-default" style="width:25%; margin: auto; background-color: #EEEEEE;">
-                <div class="panel-body">
-                    <div style="text-align: center; padding-bottom:10px;">
-                        <h2>Ingresa a tu cuenta</h2>
-                    </div>
-                    <table style="margin:auto">
-                        <tr>
+    <body>
+        <div class="container">
 
-                            <td ><input type="text" name="Usuario" class="form-control" placeholder="Usuario"/></td>
-                        </tr>
-                        <tr>
+            <div class="row" id="pwd-container">
+                <div class="col-md-4"></div>
 
-                            <td><input type="password" name="Clave" class="form-control" placeholder="Contraseña"/></td>
-                        </tr>
-                        <tr>
+                <div class="col-md-4">
+                    <section class="login-form">
+                        <form method="post" action="index.php" class="sombras" role="login">
+                           
+                            <img src="img/Censa.png" class="img-responsive" alt="censa"/>
 
-                            <td>
-                                <br/>
-                                <input name="iniciar" type="submit" class="btn btn-success" style="width:100%;" value="Iniciar Sesión"/>
-                            </td>
-                        </tr>
-                        <?php
-                        if($_mensaje!="")
-                        {
-                        ?>
-                        <tr>
-                            <td style="text-align:center; padding-top:5px;">
-                                <label class="ErrorLabel"><?php echo $_mensaje; ?></label>
-                            </td>
-                        </tr>
-                        <?php
-                        }
-                        ?>
-                    </table>
-                    <br/>
+                            <input type="text" name="Usuario" class="form-control input-lg" placeholder="Usuario"/>
+
+
+                            <input type="password" name="Clave" class="form-control input-lg" placeholder="Contraseña"/>	
+
+
+                            <input name="iniciar" type="submit" class="btn btn-lg btn-primary btn-block" value="Iniciar Sesión"/>
+
+                            <div style="color:red;">
+                                <asp:Label ID="lblError" runat="server"></asp:Label>
+                            </div>
+                        </form>
+                    </section>
                 </div>
+
+                <div class="col-md-4"></div>
+
+
             </div>
-        </form>
+
+            <p>
+                <br>
+                <br>
+            </p>
+        </div>
     </body>
 </html>
