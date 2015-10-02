@@ -6799,3 +6799,49 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+.btn-censa { 
+  color: #ffffff; 
+  background-color: #15723F; 
+  border-color: #105730; 
+} 
+ 
+.btn-censa:hover, 
+.btn-censa:focus, 
+.btn-censa:active, 
+.btn-censa.active, 
+.open .dropdown-toggle.btn-censa { 
+  color: #ffffff; 
+  background-color: #054D25; 
+  border-color: #105730; 
+} 
+ 
+.btn-censa:active, 
+.btn-censa.active, 
+.open .dropdown-toggle.btn-censa { 
+  background-image: none; 
+} 
+ 
+.btn-censa.disabled, 
+.btn-censa[disabled], 
+fieldset[disabled] .btn-censa, 
+.btn-censa.disabled:hover, 
+.btn-censa[disabled]:hover, 
+fieldset[disabled] .btn-censa:hover, 
+.btn-censa.disabled:focus, 
+.btn-censa[disabled]:focus, 
+fieldset[disabled] .btn-censa:focus, 
+.btn-censa.disabled:active, 
+.btn-censa[disabled]:active, 
+fieldset[disabled] .btn-censa:active, 
+.btn-censa.disabled.active, 
+.btn-censa[disabled].active, 
+fieldset[disabled] .btn-censa.active { 
+  background-color: #15723F; 
+  border-color: #105730; 
+} 
+ 
+.btn-censa .badge { 
+  color: #15723F; 
+  background-color: #ffffff; 
+}

@@ -44,7 +44,7 @@ if(isset($_POST["iniciar"])){
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/login.css" rel="stylesheet" />
 
         <title>Login</title>
@@ -59,7 +59,7 @@ if(isset($_POST["iniciar"])){
                     <section class="login-form">
                         <form method="post" action="index.php" class="sombras" role="login">
                            
-                            <img src="img/Censa.png" class="img-responsive" alt="censa"/>
+                            <img src="img/img-login.png" class="img-responsive" alt="censa"/>
 
                             <input type="text" name="Usuario" class="form-control input-lg" placeholder="Usuario"/>
 
@@ -67,7 +67,7 @@ if(isset($_POST["iniciar"])){
                             <input type="password" name="Clave" class="form-control input-lg" placeholder="Contraseña"/>	
 
 
-                            <input name="iniciar" type="submit" class="btn btn-lg btn-primary btn-block" value="Iniciar Sesión"/>
+                            <input name="iniciar" type="submit" class="btn btn-lg btn-censa btn-block" value="Iniciar Sesión"/>
 
                             <div style="color:red;">
                                 <asp:Label ID="lblError" runat="server"></asp:Label>
