@@ -6800,6 +6800,7 @@ button.close {
 }
 /*# sourceMappingURL=bootstrap.css.map */
 
+/*************************Boton Personalizado Censa***************************/
 .btn-censa { 
   color: #ffffff; 
   background-color: #15723F; 
@@ -6845,3 +6846,54 @@ fieldset[disabled] .btn-censa.active {
   color: #15723F; 
   background-color: #ffffff; 
 }
+
+/*************************Fin Boton Personalizado Censa***************************/
+
+/*************************Boton Personalizado Perfil***************************/
+.btn-perfil { 
+  color: #ffffff; 
+  background-color: #49BD1B; 
+  border-color: #4D8A08; 
+} 
+ 
+.btn-perfil:hover, 
+.btn-perfil:focus, 
+.btn-perfil:active, 
+.btn-perfil.active, 
+.open .dropdown-toggle.btn-perfil { 
+  color: #ffffff; 
+  background-color: #03802E; 
+  border-color: #4D8A08; 
+} 
+ 
+.btn-perfil:active, 
+.btn-perfil.active, 
+.open .dropdown-toggle.btn-perfil { 
+  background-image: none; 
+} 
+ 
+.btn-perfil.disabled, 
+.btn-perfil[disabled], 
+fieldset[disabled] .btn-perfil, 
+.btn-perfil.disabled:hover, 
+.btn-perfil[disabled]:hover, 
+fieldset[disabled] .btn-perfil:hover, 
+.btn-perfil.disabled:focus, 
+.btn-perfil[disabled]:focus, 
+fieldset[disabled] .btn-perfil:focus, 
+.btn-perfil.disabled:active, 
+.btn-perfil[disabled]:active, 
+fieldset[disabled] .btn-perfil:active, 
+.btn-perfil.disabled.active, 
+.btn-perfil[disabled].active, 
+fieldset[disabled] .btn-perfil.active { 
+  background-color: #49BD1B; 
+  border-color: #4D8A08; 
+} 
+ 
+.btn-perfil .badge { 
+  color: #49BD1B; 
+  background-color: #ffffff; 
+}
+
+/*************************Fin Boton Personalizado Perfil***************************/

@@ -89,17 +89,19 @@ switch ($_SESSION["CodPerfil"]) {
                     $codPerfil = $_SESSION["CodPerfil"];
                     while($itemMenu = mysqli_fetch_array($res)){
                         $claseIcono = "";
+                        $accionMenu = "";
                         switch ($codPerfil){
-                            case "02":
+                            case "02": //Profesor
                                 $claseIcono = "fa fa-book";
                                 break;
-                            case "03":
+                            case "03": //Estudiante
                                 $claseIcono = "fa fa-mortar-board";
+                                $accionMenu = "onclick='MateriasPrograma(" . $itemMenu[1] . ");'";
                                 break;
                         }
                         
                         $formatoItemMenu = '<li>
-                                                <a href="index.html" style="color:#fff;"><i class="' . $claseIcono . '"></i> ' . $itemMenu[2] . '</a>
+                                                <a href="#" ' . $accionMenu . ' style="color:#fff;"><i class="' . $claseIcono . '"></i> ' . $itemMenu[2] . '</a>
                                             </li>';
                         
                         echo $formatoItemMenu;
@@ -113,26 +115,6 @@ switch ($_SESSION["CodPerfil"]) {
         <div id="page-wrapper">
 
             <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            Blank Page
-                            <small>Subheading</small>
-                        </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- /.row -->
-
             </div>
             <!-- /.container-fluid -->
 
@@ -147,6 +129,8 @@ switch ($_SESSION["CodPerfil"]) {
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.js" type="text/javascript"></script>
+    
+    <script src="css/estudiantes.js" type="text/javascript"></script>
 
 </body>
 </html>
