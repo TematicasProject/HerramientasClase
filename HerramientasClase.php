@@ -105,7 +105,9 @@ switch ($_SESSION["CodPerfil"]) {
                                             </li>';
                         
                         echo $formatoItemMenu;
+                      
                     }
+                    
                     ?>
                 </ul>
             </div>
