@@ -87,27 +87,39 @@ switch ($_SESSION["CodPerfil"]) {
                 <ul class="nav navbar-nav side-nav">
                     <?php
                     $codPerfil = $_SESSION["CodPerfil"];
-                    while($itemMenu = mysqli_fetch_array($res)){
-                        $claseIcono = "";
-                        $accionMenu = "";
-                        switch ($codPerfil){
-                            case "02": //Profesor
-                                $claseIcono = "fa fa-book";
-                                break;
-                            case "03": //Estudiante
-                                $claseIcono = "fa fa-mortar-board";
-                                $accionMenu = "onclick='MateriasPrograma(" . $itemMenu[1] . ");'";
-                                break;
-                        }
-                        
-                        $formatoItemMenu = '<li>
+                    if ($codPerfil != "01") {
+                        while ($itemMenu = mysqli_fetch_array($res)) {
+                            $claseIcono = "";
+                            $accionMenu = "";
+                            switch ($codPerfil) {
+                                case "02": //Profesor
+                                    $claseIcono = "fa fa-book";
+                                    break;
+                                case "03": //Estudiante
+                                    $claseIcono = "fa fa-mortar-board";
+                                    $accionMenu = "onclick='MateriasPrograma(" . $itemMenu[1] . ");'";
+                                    break;
+                            }
+
+                            $formatoItemMenu = '<li>
                                                 <a href="#" ' . $accionMenu . ' style="color:#fff;"><i class="' . $claseIcono . '"></i> ' . $itemMenu[2] . '</a>
+                                            </li>';
+
+                            echo $formatoItemMenu;
+                        }
+                    }
+                    else 
+                    {
+                        $formatoItemMenu = '<li>
+                                                <a href="#" onclick="VisorProgramasAdmin();" style="color:#fff;"><i class="fa fa-clone"></i>Programas</a>
+                                            </li>';
+                        
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminUsuarios();" style="color:#fff;"><i class="fa fa-clone"></i>Usuarios</a>
                                             </li>';
                         
                         echo $formatoItemMenu;
-                      
                     }
-                    
                     ?>
                 </ul>
             </div>
@@ -118,7 +130,7 @@ switch ($_SESSION["CodPerfil"]) {
 
             <div class="container-fluid">
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.container-fluid -->f
 
         </div>
         <!-- /#page-wrapper -->
@@ -132,7 +144,9 @@ switch ($_SESSION["CodPerfil"]) {
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.js" type="text/javascript"></script>
     
-    <script src="css/estudiantes.js" type="text/javascript"></script>
+    <script src="js/administradores.js" type="text/javascript"></script>
+    <script src="js/estudiantes.js" type="text/javascript"></script>
+    <script src="js/estudiantes.js" type="text/javascript"></script>
 
 </body>
 </html>
