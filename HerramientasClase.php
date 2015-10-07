@@ -40,6 +40,7 @@ switch ($_SESSION["CodPerfil"]) {
         <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/sb-admin.css" rel="stylesheet" type="text/css"/>
         <link href="font-awesome-4.4.0/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="css/pnotify.custom.min.css" rel="stylesheet" type="text/css"/>
         
     </head>
     <body>
@@ -143,10 +144,13 @@ switch ($_SESSION["CodPerfil"]) {
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/pnotify.custom.min.js" type="text/javascript"></script>
     
+    <script src="js/general.js" type="text/javascript"></script>
     <script src="js/administradores.js" type="text/javascript"></script>
     <script src="js/estudiantes.js" type="text/javascript"></script>
     <script src="js/estudiantes.js" type="text/javascript"></script>
+    
 
 </body>
 </html>

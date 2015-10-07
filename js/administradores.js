@@ -17,6 +17,21 @@ function GuardarUsuario(){
         Clave:clave,
         CodPerfil:codPerfil
     }, function(resp){
-        alert(resp);
+        resp = JSON.parse(resp);
+        if(resp.Error != undefined){
+            Notificacion("error", "Error", resp.Error);
+        }
+        else{
+            Notificacion("success", "Usurio Guardado", resp.Mensaje);
+            ClearFormAdminUsuarios();
+        }
     });
+}
+
+function ClearFormAdminUsuarios()
+{
+    $("#txtUsuario").val("");
+    $("#txtNombre").val("");
+    $("#txtClave").val("");
+    $("#cmbPerfil").prop("selectedIndex", 0);
 }
