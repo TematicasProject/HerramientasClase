@@ -111,11 +111,35 @@ switch ($_SESSION["CodPerfil"]) {
                     else 
                     {
                         $formatoItemMenu = '<li>
-                                                <a href="#" onclick="VisorProgramasAdmin();" style="color:#fff;"><i class="fa fa-clone"></i>Programas</a>
+                                                <a href="#" onclick="adminProgramas();" style="color:#fff;"><i class="fa fa-clone"></i>Programas</a>
                                             </li>';
                         
                         $formatoItemMenu .= '<li>
                                                 <a href="#" onclick="AdminUsuarios();" style="color:#fff;"><i class="fa fa-clone"></i>Usuarios</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminPensum();" style="color:#fff;"><i class="fa fa-clone"></i>Pensum</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminEscuelas();" style="color:#fff;"><i class="fa fa-clone"></i>Escuelas</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminJornada();" style="color:#fff;"><i class="fa fa-clone"></i>Jornada</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminMateria();" style="color:#fff;"><i class="fa fa-clone"></i>Materia</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminTematica();" style="color:#fff;"><i class="fa fa-clone"></i>Tematica</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminPerfiles();" style="color:#fff;"><i class="fa fa-clone"></i>Perfiles</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminMatricula();" style="color:#fff;"><i class="fa fa-clone"></i>Matricula</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminGrupo();" style="color:#fff;"><i class="fa fa-clone"></i>Grupo</a>
                                             </li>';
                         
                         echo $formatoItemMenu;
