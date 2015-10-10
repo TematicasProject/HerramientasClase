@@ -89,11 +89,32 @@ function GuardarGrupo(){
    return "Datos recividos"; 
 }
 
-function GuardarPrograma(){
-    $codPrograma= $_POST["codPrograma"];
+function GuardarProgramas(){
+    $codProgramas= $_POST["codProgramas"];
     $Nombre = $_POST["Nombre"];
     $codEscuela= $_POST["codEscuela"]; 
 
+   return "Datos recividos"; 
+}
+
+function GuardarGrupos_Estudiantes(){
+    $codGrupos = $_POST["codGrupos"];
+    $codEstudiantes= $_POST["codEstudiantes"]; 
+    $CodRegistro= $_POST["CodRegistro"];
+
+   return "Datos recividos"; 
+}
+
+function GuardarTematicas_Detalle(){
+    $codTematicas= $_POST["codTematicas"];
+    $codDetalle = $_POST["codDetalle"];
+    $NombreArchivo= $_POST["NombreArchivo"]; 
+    $Extencion = $_POST["Extencion"];
+    $Comentario = $_POST["Comentario"];
+    $RutaFisica = $_POST["RutaFisica"];
+    $RutaVirtual = $_POST["RutaVirtual"];
+    $CodRegistro= $_POST["CodRegistro"];
+     
    return "Datos recividos"; 
 }
 ?>

@@ -141,6 +141,12 @@ switch ($_SESSION["CodPerfil"]) {
                         $formatoItemMenu .= '<li>
                                                 <a href="#" onclick="AdminGrupo();" style="color:#fff;"><i class="fa fa-clone"></i>Grupo</a>
                                             </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="adminGrupos_Estudiantes();" style="color:#fff;"><i class="fa fa-clone"></i>Grupos_Estudiantes</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="adminTematicas_Detalle();" style="color:#fff;"><i class="fa fa-clone"></i>Tematicas_Detalle</a>
+                                            </li>';
                         
                         echo $formatoItemMenu;
                     }

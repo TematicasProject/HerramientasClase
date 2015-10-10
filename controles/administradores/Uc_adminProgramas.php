@@ -3,13 +3,13 @@
 ?>
 
 <div class="panel panel-default">
-    <div class="panel-heading"><strong>Administracion del Programas</strong></div>
+    <div class="panel-heading"><strong>Administracion de Programas</strong></div>
     <div class="panel-body">
         <div class="row">
             <div class="col-lg-4">
                 <div class="form-group">
-                    <label>Cod Programa:</label>
-                    <input id="txtPrograma" maxlength="20" type="text" class="form-control">
+                    <label>Cod Programas:</label>
+                    <input id="txtProgramas" maxlength="20" type="text" class="form-control">
                 </div>
             </div>
             <div class="col-lg-8">

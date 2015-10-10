@@ -210,8 +210,8 @@ function GuardarPensum(){
     });
 }
 
-function AdminProgramas(){
-    $.post("controles/administradores/Uc_AdminProgramas.php",function(resp){
+function adminProgramas(){
+    $.post("controles/administradores/Uc_adminProgramas.php",function(resp){
         $("#page-wrapper").html(resp);
     });
 }
@@ -228,6 +228,60 @@ function GuardarProgramas(){
         codProgramas:codProgramas,
         Nombre:Nombre,
         codEscuela:codEscuela
+    }, function(resp){
+        alert(resp);
+    });
+}
+
+function adminGrupos_Estudiantes(){
+    $.post("controles/administradores/Uc_adminGrupos_Estudiantes.php",function(resp){
+        $("#page-wrapper").html(resp);
+    });
+}
+
+function GuardarGrupos_Estudiantes(){
+    var codGrupos = $("#txtGrupo").val();
+    var codEstudiantes =$("#txtEstudiantes").val();
+    var CodRegistro =$("#txtRegistro").val();
+
+    
+    $.post("requestPages/requestAdministradores.php", {
+        Action: "GuardarGrupo_Estudiantes",
+        CodRegistro:CodRegistro,
+        codGrupos:codGrupos,
+        codEstudiantes:codEstudiantes
+    }, function(resp){
+        alert(resp);
+    });
+}
+
+function AdminTematica(){
+    $.post("controles/administradores/Uc_AdminTematica.php",function(resp){
+        $("#page-wrapper").html(resp);
+    });
+}
+
+function GuardarTematicas_Detalle(){
+    var codTematicas = $("#txtTematicas").val();
+    var codDetalle = $("#txtDetalle").val();
+    var NombreArchivo =$("#txtNombreArchivo").val();
+    var Extencion = $("#txtExtencion").val();
+    var Comentario = $("#txtComentario").val();
+    var RutaFisica = $("#txtRutaFisica").val();
+    var RutaVirtual = $("#txtRutaVirtual").val();
+    var CodRegistro =$("#txtRegistro").val();
+
+    
+    $.post("requestPages/requestAdministradores.php", {
+        Action: "GuardarTematicas_Detalle",
+        codTematicas:codTematicas,
+        codDetalle:codDetalle,
+        NombreArchivo:NombreArchivo,
+        Extencion:Extencion,
+        Comentario:Comentario,
+        RutaFisica:RutaFisica,
+        RutaVirtual:RutaVirtual,
+        CodRegistro:CodRegistro
     }, function(resp){
         alert(resp);
     });

@@ -45,8 +45,17 @@ class AdministradoresDAO {
       return "ok";  
     }
     
-    function GuardarProgramas($codPrograma, $Nombre, $codEscuela){
+    function GuardarProgramas($codProgramas, $Nombre, $codEscuelas){
       return "ok";  
     }
+    
+    function GuardarGrupos_Estudiantes($codGrupos, $codEstudiantes){
+      return "ok";  
+    }
+    
+    function GuardarTematicas_Detalle($codDetalle, $codTematica, $NombreArchivo, $Extencion, $Comentario, $RutaFisica, $RutaVirtual){
+      return "ok";  
+    }
+    
 }
 ?>
