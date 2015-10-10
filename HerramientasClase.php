@@ -40,6 +40,7 @@ switch ($_SESSION["CodPerfil"]) {
         <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/sb-admin.css" rel="stylesheet" type="text/css"/>
         <link href="font-awesome-4.4.0/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="css/pnotify.custom.min.css" rel="stylesheet" type="text/css"/>
         
     </head>
     <body>
@@ -67,17 +68,7 @@ switch ($_SESSION["CodPerfil"]) {
                     <a href="#" class="dropdown-toggle" style="color:#fff;" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo $_SESSION["Nombre"] ?><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Cerrar Sesion</a>
                         </li>
                     </ul>
                 </li>
@@ -173,10 +164,13 @@ switch ($_SESSION["CodPerfil"]) {
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/pnotify.custom.min.js" type="text/javascript"></script>
     
+    <script src="js/general.js" type="text/javascript"></script>
     <script src="js/administradores.js" type="text/javascript"></script>
     <script src="js/estudiantes.js" type="text/javascript"></script>
     <script src="js/estudiantes.js" type="text/javascript"></script>
+    
 
 </body>
 </html>

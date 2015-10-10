@@ -17,7 +17,14 @@ function GuardarUsuario(){
         Clave:clave,
         CodPerfil:codPerfil
     }, function(resp){
-        alert(resp);
+        resp = JSON.parse(resp);
+        if(resp.Error != undefined){
+            Notificacion("error", "Error", resp.Error);
+        }
+        else{
+            Notificacion("success", "Usurio Guardado", resp.Mensaje);
+            ClearFormAdminUsuarios();
+        }
     });
 }
 
