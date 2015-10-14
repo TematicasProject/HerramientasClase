@@ -33,9 +33,6 @@ class AdministradoresDAO {
       return "ok";  
     }
     
-    function GuardarTematica($codTematica, $codGrupo, $Nombre, $codMateria){
-      return "ok";  
-    }
     
     function GuardarPerfiles($codPerfil, $Nombre){
       return "ok";  

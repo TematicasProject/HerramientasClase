@@ -13,6 +13,9 @@ class profesoresDAO {
         $r = mysqli_query($this->cnn->cnnDb(), "call spGruposMateria ('" . $idProfesor . "', " . $idMateria . ")");
         return $r;
     }
+    function GuardarTematica($codTematica, $codGrupo, $Nombre, $codMateria){
+      return "ok";  
+    }
 }
 
 ?>
