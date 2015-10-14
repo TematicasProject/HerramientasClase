@@ -2,6 +2,8 @@
 
 include_once 'clases/UsuariosDAO.php';
 
+header('content-type: text/html; charset=utf-8');
+
 session_start();
 if (!isset($_SESSION["Usuario"])) {
     header('location:index.php');
@@ -85,6 +87,7 @@ switch ($_SESSION["CodPerfil"]) {
                             switch ($codPerfil) {
                                 case "02": //Profesor
                                     $claseIcono = "fa fa-book";
+                                    $accionMenu = "onclick='GruposMateria(" . $itemMenu[1] . ", \"" . $_SESSION["Usuario"] . "\");'";
                                     break;
                                 case "03": //Estudiante
                                     $claseIcono = "fa fa-mortar-board";
@@ -148,11 +151,6 @@ switch ($_SESSION["CodPerfil"]) {
         </nav>
 
         <div id="page-wrapper">
-
-            <div class="container-fluid">
-            </div>
-            <!-- /.container-fluid -->f
-
         </div>
         <!-- /#page-wrapper -->
 
@@ -169,7 +167,7 @@ switch ($_SESSION["CodPerfil"]) {
     <script src="js/general.js" type="text/javascript"></script>
     <script src="js/administradores.js" type="text/javascript"></script>
     <script src="js/estudiantes.js" type="text/javascript"></script>
-    <script src="js/estudiantes.js" type="text/javascript"></script>
+    <script src="js/profesores.js" type="text/javascript"></script>
     
 
 </body>
