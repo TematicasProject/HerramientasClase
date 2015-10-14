@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `tematicasprojectdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `tematicasprojectdb`;
--- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: tematicasprojectdb
 -- ------------------------------------------------------
--- Server version	5.6.17
+-- Server version	5.5.24-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -62,7 +62,7 @@ CREATE TABLE `grupos` (
 
 LOCK TABLES `grupos` WRITE;
 /*!40000 ALTER TABLE `grupos` DISABLE KEYS */;
-INSERT INTO `grupos` VALUES (1,'GRUPO PROGRAMACION PHP',4,'MALAVIDA',4),(2,'GRUPO INTRODUCCION JAVA',2,'MALAVIDA',5),(3,'GRUPO INTRODUCCION JAVA',3,'MALAVIDA',5);
+INSERT INTO `grupos` VALUES (1,'GRUPO PROGRAMACION PHP',4,'MALAVIDA',4);
 /*!40000 ALTER TABLE `grupos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,6 +313,172 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'tematicasprojectdb'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `spAdminEscuelas` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spAdminEscuelas`(
+_opcion int,
+_codescuela int,
+_nombre varchar(60)
+)
+begin
+	if _opcion = 1 then /*Crea o modifica el registro de una escuela*/
+		if(select count(*) from escuela where codescuela = _codescuela) > 0 then
+			update escuelas set
+			nombre = _nombre
+			where codescuela = _codescuela;
+		else
+			insert into escuelas 
+				(codescuela, nombre)
+			values
+				(_codescuela, _nombre);
+		end if;
+	end if;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spAdminjornada` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spAdminjornada`(
+_opcion int,
+_codjornada int,
+_nombre varchar(60)
+)
+begin
+	if _opcion = 1 then /*Crea o modifica el registro de una jornada*/
+		if(select count(*) from jornadas where codjornada = _codjornada) > 0 then
+			update jornadas set
+			nombre = _nombre
+			where codjornada = _codjornada;
+		else
+			insert into jornadas 
+				(codjornada, nombre)
+			values
+				(_codjornada, _nombre);
+		end if;
+	end if;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spAdminMateria` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spAdminMateria`(
+_opcion int,
+_codmateria int,
+_nombre varchar(60)
+)
+begin
+	if _opcion = 1 then /*Crea o modifica el registro de una materia*/
+		if(select count(*) from materia where codmateria = _codmateria) > 0 then
+			update materias set
+			nombre = _nombre
+			where codmateria = _codmateria;
+		else
+			insert into materias 
+				(codmateria, nombre)
+			values
+				(_codmateria, _nombre);
+		end if;
+	end if;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spAdminPensum` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spAdminPensum`(
+_opcion int,
+_codprograma char(20),
+_codmateria char(20)
+)
+begin
+	if _opcion = 1 then /*Crea o modifica el registro de un usuario*/
+		if(select count(*) from pensum where codprograma = _codprograma and codmateria  = _codmateria) = 0 then
+			insert into pensum
+				(codprograma, codmateria)
+			values
+				(_codprograma, _codmateria);
+		end if;
+    end if;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spAdminPerfil` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = '' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spAdminPerfil`(
+_opcion int,
+_codperfil char(2),
+_nombre varchar(60)
+)
+begin
+	if _opcion = 1 then /*Crea o modifica el registro de un perfil*/
+		if(select count(*) from perfiles where codperfil = _codperfil) > 0 then
+			update perfiles set
+			nombre = _nombre
+			where codperfil = _codperfil;
+		else
+			insert into perfiles 
+				(codperfil, nombre)
+			values
+				(_codperfil, _nombre);
+		end if;
+	end if;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `spAdminUsuarios` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -354,7 +520,7 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `spGruposMateria` */;
+/*!50003 DROP PROCEDURE IF EXISTS `spgruposPrograma` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -362,14 +528,13 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ENGINE_SUBSTITUTION' */ ;
+/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spGruposMateria`(_idProfesor char(20), _idMateria int)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spgruposPrograma`(_idProfesor int)
 begin
-	select a.idGrupo, a.nombre as nombreGrupo, b.nombre as nombreJornada
-	from grupos a
-	inner join jornadas b on a.idJornada = b.idJornada
-	where a.idProfesor = _idProfesor and a.idMateria = _idMateria;
+	select idgrupo, nombre, idmateria,  idjornada
+from grupos
+where idProfesor = _idProfesor;
 end ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -444,4 +609,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-13 22:15:11
+-- Dump completed on 2015-10-13 22:21:48
