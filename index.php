@@ -86,5 +86,6 @@ if(isset($_POST["iniciar"])){
                 <br>
             </p>
         </div>
+        <a href="registro.php"><h2 align="center">Registrarse</h2></a><br><br>
     </body>
 </html>
