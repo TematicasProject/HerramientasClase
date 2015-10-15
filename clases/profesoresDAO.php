@@ -9,9 +9,12 @@ class profesoresDAO {
         $this->cnn = new Conexion();
     }
     
-    public function Grupos($idprofesor){
-        $r = mysqli_query($this->cnn->cnnDb(), "call spgruposPrograma(" . $idprofesor . ");");
+    public function Grupos($idProfesor, $idMateria){
+        $r = mysqli_query($this->cnn->cnnDb(), "call spGruposMateria ('" . $idProfesor . "', " . $idMateria . ")");
         return $r;
+    }
+    function GuardarTematica($codTematica, $codGrupo, $Nombre, $codMateria){
+      return "ok";  
     }
 }
 

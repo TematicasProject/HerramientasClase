@@ -59,16 +59,6 @@ function GuardarMateria(){
    return "Datos recividos"; 
 }
 
-function GuardarTematica(){
-    $codTematica= $_POST["codTematica"];
-    $codGrupo = $_POST["codGrupo"];
-    $Nombre= $_POST["Nombre"]; 
-    $codMateria = $_POST["codMateria"];
-    $CodRegistro= $_POST["CodRegistro"];
-     
-   return "Datos recividos"; 
-}
-
 function GuardarPerfiles(){
     $codPerfiles = $_POST["codPerfiles"];
     $Nombre= $_POST["Nombre"]; 

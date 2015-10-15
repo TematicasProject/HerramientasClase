@@ -2,6 +2,8 @@
 
 include_once 'clases/UsuariosDAO.php';
 
+header('content-type: text/html; charset=utf-8');
+
 session_start();
 if (!isset($_SESSION["Usuario"])) {
     header('location:index.php');
@@ -85,6 +87,7 @@ switch ($_SESSION["CodPerfil"]) {
                             switch ($codPerfil) {
                                 case "02": //Profesor
                                     $claseIcono = "fa fa-book";
+                                    $accionMenu = "onclick='GruposMateria(" . $itemMenu[1] . ", \"" . $_SESSION["Usuario"] . "\");'";
                                     break;
                                 case "03": //Estudiante
                                     $claseIcono = "fa fa-mortar-board";
@@ -138,6 +141,36 @@ switch ($_SESSION["CodPerfil"]) {
                         $formatoItemMenu .= '<li>
                                                 <a href="#" onclick="adminTematicas_Detalle();" style="color:#fff;"><i class="fa fa-clone"></i>Tematicas_Detalle</a>
                                             </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminPensum();" style="color:#fff;"><i class="fa fa-clone"></i>Pensum</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminEscuelas();" style="color:#fff;"><i class="fa fa-clone"></i>Escuelas</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminJornada();" style="color:#fff;"><i class="fa fa-clone"></i>Jornada</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminMateria();" style="color:#fff;"><i class="fa fa-clone"></i>Materia</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminTematica();" style="color:#fff;"><i class="fa fa-clone"></i>Tematica</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminPerfiles();" style="color:#fff;"><i class="fa fa-clone"></i>Perfiles</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminMatricula();" style="color:#fff;"><i class="fa fa-clone"></i>Matricula</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="AdminGrupo();" style="color:#fff;"><i class="fa fa-clone"></i>Grupo</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="adminGrupos_Estudiantes();" style="color:#fff;"><i class="fa fa-clone"></i>Grupos_Estudiantes</a>
+                                            </li>';
+                        $formatoItemMenu .= '<li>
+                                                <a href="#" onclick="adminTematicas_Detalle();" style="color:#fff;"><i class="fa fa-clone"></i>Tematicas_Detalle</a>
+                                            </li>';
                         
                         echo $formatoItemMenu;
                     }
@@ -148,11 +181,6 @@ switch ($_SESSION["CodPerfil"]) {
         </nav>
 
         <div id="page-wrapper">
-
-            <div class="container-fluid">
-            </div>
-            <!-- /.container-fluid -->f
-
         </div>
         <!-- /#page-wrapper -->
 
@@ -169,7 +197,7 @@ switch ($_SESSION["CodPerfil"]) {
     <script src="js/general.js" type="text/javascript"></script>
     <script src="js/administradores.js" type="text/javascript"></script>
     <script src="js/estudiantes.js" type="text/javascript"></script>
-    <script src="js/estudiantes.js" type="text/javascript"></script>
+    <script src="js/profesores.js" type="text/javascript"></script>
     
 
 </body>

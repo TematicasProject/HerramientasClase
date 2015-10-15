@@ -293,4 +293,3 @@ function GuardarTematicas_Detalle(){
         alert(resp);
     });
 }
-
